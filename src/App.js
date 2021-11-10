@@ -1,24 +1,48 @@
-import logo from './logo.svg';
+import { createTheme, ThemeProvider } from '@mui/material';
+import { blue } from '@mui/material/colors';
 import './App.css';
+import Footer from './components/Footer';
+import Home from './components/Home';
+import NavBar from './components/NavBar';
+import Pricing from './components/Pricing';
+import Products from './components/Products';
+import Team from './components/Team';
+import Testimonials from './components/Testimonials';
 
 function App() {
+  const theme = createTheme({
+    palette: {
+      primary: {
+        main: blue[600]
+      }
+    },
+    typography: {
+      fontFamily: [
+        'Montserrat',
+        'Raleway',
+        'Poppins',
+        '"Open Sans"',
+        'Roboto',
+        '"Helvetica Neue"',
+        'Arial',
+        'sans-serif',
+        '"Apple Color Emoji"',
+        '"Segoe UI Emoji"',
+        '"Segoe UI Symbol"',
+      ].join(','),
+    },
+  });
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <NavBar />
+      <Home />
+      <Products />
+      <Team />
+      <Testimonials />
+      <Pricing />
+      <Footer />
+    </ThemeProvider>
   );
 }
 

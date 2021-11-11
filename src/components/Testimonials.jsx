@@ -1,8 +1,13 @@
 import React from 'react'
 import { Typography } from "@mui/material"
+import BaseSection from './BaseSection'
 
-const Testimonials = () => {
-  return (<Typography variant="h1">Testimonials</Typography>)
+const Testimonials = ({name}) => {
+  return (
+    <BaseSection name={name} sx={{height: '100vh'}}>
+      <Typography variant="h1">Testimonials</Typography>
+    </BaseSection>
+  )
 }
 
 export default Testimonials

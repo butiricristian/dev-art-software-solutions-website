@@ -1,5 +1,6 @@
 import { createTheme, ThemeProvider } from '@mui/material';
 import { blue } from '@mui/material/colors';
+import { Box } from '@mui/system';
 import './App.css';
 import Footer from './components/Footer';
 import Home from './components/Home';
@@ -36,12 +37,14 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <NavBar />
-      <Home />
-      <Products />
-      <Team />
-      <Testimonials />
-      <Pricing />
-      <Footer />
+      <Box sx={{mt: 8}} id="mainContainer">
+        <Home name="home"/>
+        <Products name="products"/>
+        <Team name="team"/>
+        <Testimonials name="testimonials"/>
+        <Pricing name="pricing"/>
+        <Footer />
+      </Box>
     </ThemeProvider>
   );
 }

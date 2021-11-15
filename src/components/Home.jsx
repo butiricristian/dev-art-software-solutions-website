@@ -1,27 +1,27 @@
-import React from 'react'
-import { Button, Grid, Typography, useTheme } from "@mui/material"
-import BaseSection from './BaseSection'
+import { Button, Grid, Typography, useTheme } from "@mui/material";
 import { Box } from '@mui/system';
-import DevelopmentIllustration from '../assets/Development.svg'
+import React from 'react';
+import DevelopmentIllustration from '../assets/Development.svg';
+import BaseSection from './BaseSection';
 
 const Home = ({name}) => {
   const theme = useTheme()
   const appBarHeight = theme.spacing(8)
 
   return (
-    <BaseSection name={name} height={`calc(100vh - ${appBarHeight})`}>
-      <Grid container justifyContent="space-between" alignItems="center" padding={6}>
-        <Grid item marginLeft={8}>
-          <Typography variant="h1" component="div" fontWeight={600} sx={{marginBlockStart: 0}}>DevArt</Typography>
-          <Typography variant="h6" component="div" fontWeight={300}>Digitalize your business</Typography>
-          <Grid container spacing={2}>
-            <Grid item> <Button color="primary" fullWidth variant="contained">Contact</Button> </Grid>
-            <Grid item> <Button color="primary" fullWidth variant="outlined">Services</Button> </Grid>
+    <BaseSection name={name} height={`calc(70vh - ${appBarHeight})`}>
+      <Grid container justifyContent="space-between" alignItems="center" padding={6} sx={{height: '100%'}}>
+        <Grid item sm={4} >
+          <Typography variant="h2" component="p" fontWeight={600}>Digitalize your business</Typography>
+          <Typography variant="h6" component="p" fontWeight={300}>Digitalize your business</Typography>
+          <Grid fullWidth container spacing={2} justifyContent="space-between">
+            <Grid xs={12} sm={6} item> <Button color="primary" fullWidth variant="contained">Contact</Button> </Grid>
+            <Grid xs={12} sm={6} item> <Button color="primary" fullWidth variant="outlined">Services</Button> </Grid>
           </Grid>
         </Grid>
-        <Grid item>
-          <Box alignItems="center" justifyContent="center">
-            <img src={DevelopmentIllustration} alt="Development"/>
+        <Grid item sm={8} >
+          <Box alignItems="center" justifyContent="center" sx={{width: '100%'}}>
+            <img src={DevelopmentIllustration} alt="Development" sx={{maxWidth: '100%'}}/>
           </Box>
         </Grid>
       </Grid>
